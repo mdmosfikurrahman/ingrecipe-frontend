@@ -1,0 +1,233 @@
+/* Global styles */
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.recipe-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid layout: Properly spaced 3x3 display */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Recipe Card */
+.recipe-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Recipe Header */
+.recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff7675;
+    padding: 12px 18px;
+    border-radius: 12px 12px 0 0;
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.recipe-title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.rating {
+    font-weight: bold;
+    background: #fff;
+    color: #ff7675;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 1rem;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Description */
+.recipe-description {
+    font-style: italic;
+    background: rgba(255, 118, 117, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Expand Buttons */
+.expand-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.expand-buttons button {
+    padding: 10px 14px;
+    border: none;
+    background: #ff7675;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.expand-buttons button:hover {
+    background: #e17055;
+}
+
+/* Modal Background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    position: relative;
+}
+
+/* Modal Title */
+.modal-title {
+    font-size: 1.7rem;
+    color: #d63031;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+}
+
+/* Close Button */
+.close-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.close-btn:hover {
+    background: #c0392b;
+}
+
+/* Ingredients & Comments */
+.ingredients-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients-list li {
+    background: #ffeaa7;
+    padding: 10px 14px;
+    margin: 6px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Instructions */
+.instructions {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    color: #2d3436;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Comments */
+.comments-list {
+    text-align: left;
+}
+
+.comment {
+    font-size: 1rem;
+    background: #dfe6e9;
+    padding: 12px;
+    border-left: 5px solid #ff7675;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.comment:hover {
+    background: #fab1a0;
+    color: white;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 900px) {
+    .recipe-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
